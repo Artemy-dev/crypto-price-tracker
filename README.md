@@ -37,6 +37,14 @@ pip install fastapi pydantic-settings aiohttp uvicorn certifi
 * `uvicorn` - ASGI-сервер для запуска FastAPI с автоперезагрузкой;
 * `certifi` - для проверки SSL-сертификатов при внешних запросах к криптобиржам.
 
+**Кэширование:**
+
+**Установка библиотеки Async-lru**
+
+```bash
+pip install async-lru
+```
+
 **Запуск:**
 
 ```bash
