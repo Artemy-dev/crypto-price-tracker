@@ -1,6 +1,6 @@
 ## Трекер криптовалют
 
-**Стек:** `Python`, `FastAPI`, `JavaScript`, `Vite`, `React`
+**Стек:** `Python`, `FastAPI`, `JavaScript`, `Vite`, `React`, `Tailwind CSS`, `Ant Design`
 
 **Backend:**
 
