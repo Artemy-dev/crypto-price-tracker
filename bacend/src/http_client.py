@@ -1,6 +1,7 @@
 import ssl
 import certifi
 from aiohttp import ClientSession, TCPConnector
+from async_lru import alru_cache
 
 class HTTPClient:
     def __init__(self, base_url: str, api_key: str):
@@ -25,12 +26,14 @@ class HTTPClient:
         return self._session
 
 class CMCHTTPClient(HTTPClient):
+    @alru_cache
     async def get_listings(self):
         session = await self._get_session()
         async with session.get("/v1/cryptocurrency/listings/latest") as resp:
             result = await resp.json()
             return result["data"]
-        
+    
+    @alru_cache
     async def get_currency(self, curr_id: int):
         session = await self._get_session()
         async with session.get(
